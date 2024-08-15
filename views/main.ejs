@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheet/styles.css">
+
+    <title>Welcome to your personal diary!</title>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <header>
+        <nav class="bg-gray-700 flex justify-between ">
+            <!-- icon for home -->
+             <div class="ms-24 my-auto">
+                <a href="/" class="self-center">
+                    <i class="fa fa-home self-center" style="font-size:36px;color:#fff;"></i>
+                 </a>
+             </div>
+             <div class="my-auto">
+                <p class="text-white grey-qo-regular animate-pulse ">Welcome to you personal diary &hearts;</p>
+             </div>
+             <div class="me-24">
+                <button class="bg-cyan-900 text-white p-2 px-4 rounded my-2"><a href="/logout">Logout</a></button>
+             </div>
+
+             
+
+
+        </nav>
+    </header>
+    <h1 class="text-center text-3xl mt-5 italic">Hello  &#128512; <%= name.name %></h1>
+
+    <div class="">
+        <form action="/work/<%= name.username %>" class="flex flex-col w-1/4 m-auto my-20 min-w-max" method="post">
+            <h2 class="text-3xl text-center animate-bounce">Add Memory &hearts; | Work</h2>
+            <input type="text" placeholder="Title" required name="title"  class="bg-gray-700 p-2 my-3 rounded" />
+            <input type="text" placeholder="Message" required name="message"  class="bg-gray-700 p-2 py-5 my-3 rounded" />
+            <input type="text" placeholder="ImageUrl"  name="image"  class="bg-gray-700 p-2 my-3 rounded" />
+            <div class="mx-auto">
+                <input type="submit" class="p-2 bg-cyan-900 rounded text-white center w-20 mx-auto">
+            </div>
+        </form>
+        <div class="justify-self-center">
+            <button class="p-2 bg-cyan-900 rounded text-white center w-30 mx-auto justify-self-center" style="margin: 0 47%;"><a href="/work/<%= name.username %>">See Collection</a></button>
+        </div>
+    </div>
+
+
+</body>
+</html>
+
+<!-- mongodb://localhost:27017/ -->

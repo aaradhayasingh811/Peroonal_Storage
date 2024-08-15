@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheet/styles.css">
+
+    <title>Welcome to your personal diary!</title>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <header>
+        <nav class="bg-gray-700 flex justify-between ">
+            <!-- icon for home -->
+             <div class="ms-24 my-auto">
+                <a href="/" class="self-center">
+                    <i class="fa fa-home self-center" style="font-size:36px;color:#fff;"></i>
+                 </a>
+             </div>
+             <div class="my-auto">
+                <p class="text-white grey-qo-regular animate-pulse ">Welcome to you personal diary &hearts;</p>
+             </div>
+             <div class="me-24">
+                <button class="bg-cyan-900 text-white p-2 px-4 rounded my-2"><a href="/logout">Logout</a></button>
+                <button class="bg-cyan-900 text-white p-2 px-4 rounded my-2"><a href="/addData/<%= data[0].username %>">Add data</a></button>
+             </div>
+
+             
+
+
+        </nav>
+    </header>
+    <h1 class="text-center text-3xl mt-5 italic" style="font-size: 1.5rem;">Hello &#128512; <%= data[0].username %></h1>
+
+    <div class="">
+        <% data.forEach(element => { %>
+            <div class="mx-auto my-10 w-1/2 border-2 border-white p-6 rounded">
+                <div class="">
+                    <button class="px-3 py-1 bg-blue-900 border-2 border-white rounded-lg"><a href="/edit/<%= element._id %>">Edit</a></button>
+                    <button class="px-3 py-1 bg-blue-900 border-2 border-white rounded-lg"><a href="/delete/<%= element._id %>/<%= element.username %>">Delete</a></button>
+                </div>
+               
+                <p class="text-center text-2xl mb-2 matemasie-regular font-bold	italic capitalize"><%= element.title %></p>
+                <div class="mt-9 bg-gray-700 p-4">
+                <p><%= element.message %></p>
+                </div>
+                
+            </div>
+            
+        <%  }); %>
+            
+       
+    </div>
+
+
+</body>
+</html>
+
+<!-- mongodb://localhost:27017/ -->
